@@ -9,8 +9,8 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
 ROOT = Path(__file__).resolve().parent
-SOURCE = ROOT / 'Spike_Tecnico_Confirma_ST-01_v0.1.md'
-OUT = ROOT / 'Spike_Tecnico_Confirma_ST-01_v0.1.docx'
+SOURCE = ROOT / 'Spike_Tecnico_Chulito_ST-01_v0.2.md'
+OUT = ROOT / 'Spike_Tecnico_Chulito_ST-01_v0.2.docx'
 NAVY = '1F3A5F'
 BLUE = '315B86'
 PALE = 'EAF0F6'
@@ -146,6 +146,11 @@ def configure_document(doc):
         for run in header.runs:
             run.font.size = Pt(8)
             run.font.color.rgb = RGBColor.from_string(BLUE)
+        notice = header.add_run('\nS-0.1 es un escenario simulado, no resultados de entrevistas realizadas.')
+        notice.bold = True
+        notice.font.name = 'Arial'
+        notice.font.size = Pt(7.1)
+        notice.font.color.rgb = RGBColor(160, 45, 35)
         footer = section.footer.paragraphs[0]
         footer.alignment = WD_ALIGN_PARAGRAPH.RIGHT
         footer.add_run('Uso interno · Documento de trabajo    Página ')
@@ -172,7 +177,7 @@ def configure_document(doc):
 
 def add_cover(doc, lines):
     doc.add_paragraph('CONFIRMA · PROYECTO DE SOFTWARE').runs[0].font.color.rgb = RGBColor.from_string(BLUE)
-    title = lines[0].lstrip('# ').replace('Confirma — ', '')
+    title = lines[0].lstrip('# ').replace('Chulito — ', '')
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(44)
     p.paragraph_format.space_after = Pt(10)
@@ -204,6 +209,16 @@ def add_cover(doc, lines):
                 for p in cell.paragraphs:
                     for run in p.runs:
                         run.font.size = Pt(9)
+    warning = doc.add_paragraph()
+    warning.paragraph_format.space_before = Pt(14)
+    warning.paragraph_format.space_after = Pt(8)
+    warning.paragraph_format.left_indent = Inches(0.12)
+    warning.paragraph_format.keep_together = True
+    warning_run = warning.add_run('S-0.1 es un escenario simulado, no resultados de entrevistas realizadas. Sus cifras son ficticias y no validan segmento, preferencias ni alcance del MVP.')
+    warning_run.bold = True
+    warning_run.font.name = 'Arial'
+    warning_run.font.size = Pt(9)
+    warning_run.font.color.rgb = RGBColor(160, 45, 35)
     doc.add_paragraph()
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(22)
@@ -216,9 +231,9 @@ def build():
     lines = text.splitlines()
     doc = Document()
     configure_document(doc)
-    doc.core_properties.title = 'Confirma — Spike técnico ST-01: canales de captura y modelo canónico'
+    doc.core_properties.title = 'Chulito — Spike técnico ST-01 v0.2: canales de captura y modelo canónico'
     doc.core_properties.subject = 'Comparación de canales, esquema canónico, idempotencia y conciliación sintética'
-    doc.core_properties.author = 'Proyecto Confirma'
+    doc.core_properties.author = 'Proyecto Chulito'
     add_cover(doc, lines[:7])
 
     # Start at the first body section, after the cover metadata.

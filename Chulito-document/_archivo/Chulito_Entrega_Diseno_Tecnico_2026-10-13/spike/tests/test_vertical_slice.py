@@ -1,6 +1,6 @@
 import unittest
 
-from confirma_vertical_slice import CaptureEnvelope, SQLiteLedger
+from chulito_vertical_slice import CaptureEnvelope, SQLiteLedger
 
 
 TENANT = 'store-001'

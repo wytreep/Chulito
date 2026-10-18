@@ -11,8 +11,8 @@ import markdown
 import re
 
 ROOT = Path('/home/ubuntu/confirma-sintesis-documental')
-MD_PATH = ROOT / 'Sintesis_Documental_Confirma_SD-0.3.md'
-DOCX_PATH = ROOT / 'Sintesis_Documental_Confirma_SD-0.3.docx'
+MD_PATH = ROOT / 'Sintesis_Documental_Chulito_SD-0.3.md'
+DOCX_PATH = ROOT / 'Sintesis_Documental_Chulito_SD-0.3.docx'
 NAVY = '193654'
 BLUE = '1F5A85'
 TEAL = '2E7184'
@@ -355,10 +355,10 @@ def configure_document(doc):
     add_field(r, 'NUMPAGES')
 
     props = doc.core_properties
-    props.title = 'Confirma — Síntesis documental SD-0.3: supuestos de trabajo y pendientes'
+    props.title = 'Chulito — Síntesis documental SD-0.3: supuestos de trabajo y pendientes'
     props.subject = 'S-0.1 identificado como escenario simulado; síntesis documental y supuestos de trabajo'
     props.author = 'Edwin Carabalí'
-    props.keywords = 'Confirma, síntesis documental, PRD, SRS, requisitos, Fase 0'
+    props.keywords = 'Chulito, síntesis documental, PRD, SRS, requisitos, Fase 0'
 
 
 def main():

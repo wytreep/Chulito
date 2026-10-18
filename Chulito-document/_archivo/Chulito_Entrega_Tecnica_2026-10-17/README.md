@@ -1,4 +1,4 @@
-# Confirma — entrega documental y técnica corregida
+# Chulito — entrega documental y técnica corregida
 
 **Fecha:** 17 de octubre de 2026  
 **Estado:** paquete de trabajo; requisitos, decisiones de producto y stack pendientes de revisión/aprobación.
@@ -33,13 +33,13 @@ El PRD v0.3 disponible en el workspace original es PDF. No se encontró un DOCX 
 
 ## Archivos principales
 
-- `documentos/Sintesis_Documental_Confirma_SD-0.3.md` / `.docx` / `.pdf`
-- `documentos/SRS_Confirma_v0.3_29148_alineacion_estructural.docx` / `.pdf`
-- `documentos/Spike_Tecnico_Confirma_ST-01_v0.2.md` / `.docx` / `.pdf`
-- `referencias/PRD_Confirma_v0.3_ISO29148.pdf`
-- `referencias/PRD_Confirma_v0.3_ISO29148_original.pdf` (copia fuente intacta)
-- `referencias/PRD_Confirma_v0.3_paquete_con_aviso.pdf` (anexo editorial al frente + fuente original)
+- `documentos/Sintesis_Documental_Chulito_SD-0.3.md` / `.docx` / `.pdf`
+- `documentos/SRS_Chulito_v0.3_29148_alineacion_estructural.docx` / `.pdf`
+- `documentos/Spike_Tecnico_Chulito_ST-01_v0.2.md` / `.docx` / `.pdf`
+- `referencias/PRD_Chulito_v0.3_ISO29148.pdf`
+- `referencias/PRD_Chulito_v0.3_ISO29148_original.pdf` (copia fuente intacta)
+- `referencias/PRD_Chulito_v0.3_paquete_con_aviso.pdf` (anexo editorial al frente + fuente original)
 - `referencias/Aclaracion_Metodologica_PRD_v0.3.docx` / `.pdf`
-- `referencias/Informe_Hallazgos_Confirma_S-0.1_Escenario_Simulado.pdf`
+- `referencias/Informe_Hallazgos_Chulito_S-0.1_Escenario_Simulado.pdf`
 - `spike/README.md`, código, pruebas, fixtures y referencias oficiales
 - `scripts/` contiene los generadores y el actualizador SRS usados para las revisiones.

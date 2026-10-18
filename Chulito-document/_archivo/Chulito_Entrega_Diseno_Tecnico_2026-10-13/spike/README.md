@@ -1,15 +1,13 @@
-# Confirma — spike técnico de captura y vertical slice
+# Chulito — spike técnico de captura y vertical slice
 
-**Revisión:** 0.2 · **Fecha:** 17 de octubre de 2026  
+**Revisión:** 0.1 · **Fecha:** 13 de octubre de 2026  
 **Propósito:** reducir riesgo técnico de los canales de captura y probar con datos sintéticos el flujo `captura → normalización → idempotencia → conciliación`.
-
-> **S-0.1 es un escenario simulado, no resultados de entrevistas realizadas.** Sus cifras no validan preferencias, segmento ni alcance del MVP. El PRD v0.3 también identifica S-0.1 como escenario de trabajo y pide contrastar sus supuestos con entrevistas reales.
 
 ## Resultado del spike de canales
 
 Se compararon la lectura de Gmail mediante OAuth, el reenvío de correo con filtro y el listener Android. La evidencia y las referencias están en [Fuentes oficiales de captura](Fuentes_Oficiales_Captura_2026-10-13.md).
 
-**Conclusión provisional:** no acoplar la vertical slice a un canal externo ni cerrar todavía la vía de captura. Para una prueba posterior, comparar reenvío filtrado (menos privilegio API, pero transferencia de contenido y configuración por el usuario) con listener Android (captura de notificaciones de apps, pero exige app Android y habilitación del listener). No usar lectura amplia de Gmail como primera alternativa del MVP. No priorizar canales por S-0.1; registrar la decisión mediante ADR tras validar cobertura con muestras autorizadas y revisar privacidad.
+**Conclusión provisional:** no acoplar la vertical slice a un canal externo ni cerrar todavía la vía de captura. Para una prueba real posterior, comparar reenvío filtrado (menos privilegio API, pero transferencia de contenido y configuración por el usuario) con listener Android (captura de notificaciones de apps, pero exige app Android y habilitación del listener). No usar lectura amplia de Gmail como primera alternativa del MVP. Registrar la decisión definitiva en un ADR después de probar muestras autorizadas y revisar privacidad.
 
 ## Modelo canónico propuesto
 
@@ -54,11 +52,7 @@ python3 -m unittest discover -s tests -v
 python3 run_demo.py
 ```
 
-Implementación: [`confirma_vertical_slice.py`](confirma_vertical_slice.py). Pruebas: [`tests/test_vertical_slice.py`](tests/test_vertical_slice.py). Fixtures de referencia: [`examples/synthetic_events.json`](examples/synthetic_events.json).
-
-**Resultado verificado el 17-oct-2026:** 12/12 pruebas pasan; la demo procesa dos observaciones sintéticas (correo y Android) como un pago canónico. Esto verifica únicamente reglas del prototipo con fixtures inventados: no es evidencia de entrevistas, cobertura de emisores ni validación de mercado.
-
-**Stack:** el prototipo está implementado en Python como especificación ejecutable, no como backend objetivo ni código de producción. El stack previsto es NestJS/TypeScript; falta portar la lógica y las pruebas. También está pendiente el spike de compatibilidad Node.js/TypeScript/NestJS/dependencias asociado a ADR-0001. Este ST-01 trata canales de captura y no ejecuta ni sustituye ese spike.
+Implementación: [`chulito_vertical_slice.py`](chulito_vertical_slice.py). Pruebas: [`tests/test_vertical_slice.py`](tests/test_vertical_slice.py). Fixtures de referencia: [`examples/synthetic_events.json`](examples/synthetic_events.json).
 
 ## Fuera de alcance y limitaciones conocidas
 
@@ -70,10 +64,8 @@ Implementación: [`confirma_vertical_slice.py`](confirma_vertical_slice.py). Pru
 
 ## Próximas decisiones
 
-1. Validar con entrevistas reales el segmento, problema y alcance del MVP; las entrevistas no bloquean pruebas técnicas sintéticas, pero sí decisiones de producto y piloto.
-2. Elegir emisores según uso real y viabilidad, y obtener muestras autorizadas/anónimas.
-3. Ejecutar el spike de captura en un Android de prueba y con un buzón de prueba: latencia, campos disponibles, falsas conciliaciones, configuración y revocación.
-4. Validar unicidad de referencias, zonas horarias y formatos de monto por emisor.
-5. Definir política de retención/cifrado y permisos mínimos antes de almacenar contenido original.
-6. Ejecutar por separado el spike de compatibilidad para ADR-0001 y fijar versiones.
-7. Portar la especificación ejecutable y las pruebas a TypeScript/NestJS; registrar ADR de canal aparte.
+1. Elegir los emisores del MVP con la priorización de S-0.1 y muestras autorizadas/anónimas.
+2. Ejecutar el spike de captura en un Android de prueba y con un buzón de prueba: latencia, campos disponibles, falsos positivos, configuración y revocación.
+3. Validar unicidad de referencias, zonas horarias y formatos de monto por emisor.
+4. Definir política de retención/cifrado y permisos mínimos antes de almacenar contenido original.
+5. Registrar ADR de selección de canal y evolucionar esta slice a contrato de API y adaptadores.

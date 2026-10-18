@@ -1,6 +1,6 @@
 # Chulito-document
 
-Documentos del proyecto. Se numera por tipo; dentro de cada carpeta va **solo la versión vigente** y, junto a cada `.docx`, su `.pdf` generado desde él. Las versiones anteriores pasan a `_archivo/`.
+Documentos del proyecto. Se numera por tipo; dentro de cada carpeta va la **versión vigente** y, junto a cada `.docx`, su `.pdf` generado desde él. Las **versiones anteriores del mismo tipo** también viven en su carpeta por tipo, identificadas por su número de versión; los **paquetes completos de entregas previas** (con su `.zip` y su manifiesto) pasan a `_archivo/`.
 
 | Carpeta | Contenido | Estado |
 |---|---|---|
@@ -12,6 +12,6 @@ Documentos del proyecto. Se numera por tipo; dentro de cada carpeta va **solo la
 | `05-operacion/` | Entregas con manifiesto SHA256 y futuros runbooks | Activa |
 | `06-seguridad-privacidad/` | Modelo de amenazas (STRIDE), política de datos, Ley 1581 | Pendiente |
 | `07-calidad-pruebas/` | Plan de pruebas y definición de terminado | Pendiente |
-| `_archivo/` | Versiones reemplazadas | Solo lectura |
+| `_archivo/` | Paquetes completos de entregas previas | Solo lectura |
 
 Convención de nombres: `<Tipo>_<Proyecto>_v<MAYOR>.<MENOR>_<detalle>.<ext>`. Mayor = cambia alcance o requisitos; menor = precisiones.

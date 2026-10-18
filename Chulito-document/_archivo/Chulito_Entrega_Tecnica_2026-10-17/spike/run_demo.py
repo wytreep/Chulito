@@ -1,6 +1,6 @@
 import json
 
-from confirma_vertical_slice import CaptureEnvelope, SQLiteLedger
+from chulito_vertical_slice import CaptureEnvelope, SQLiteLedger
 
 
 ledger = SQLiteLedger()

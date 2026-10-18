@@ -6,9 +6,9 @@ from docx import Document
 from docx.table import _Row
 from docx.shared import Pt, RGBColor
 
-SRC = Path('/home/ubuntu/confirma-srs-v02-profesional/SRS_Confirma_v0.2_29148_alineacion_estructural.docx')
+SRC = Path('/home/ubuntu/confirma-srs-v02-profesional/SRS_Chulito_v0.2_29148_alineacion_estructural.docx')
 OUT_DIR = Path('/home/ubuntu/confirma-srs-v03-profesional')
-OUT = OUT_DIR / 'SRS_Confirma_v0.3_29148_alineacion_estructural.docx'
+OUT = OUT_DIR / 'SRS_Chulito_v0.3_29148_alineacion_estructural.docx'
 DATE = '17 de octubre de 2026'
 DISCLAIMER = 'S-0.1 es un escenario simulado, no resultados de entrevistas realizadas.'
 
@@ -45,9 +45,9 @@ def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     shutil.copy2(SRC, OUT)
     doc = Document(OUT)
-    doc.core_properties.title = 'Especificación de requisitos de software (SRS) — Confirma v0.3'
+    doc.core_properties.title = 'Especificación de requisitos de software (SRS) — Chulito v0.3'
     doc.core_properties.subject = 'SRS v0.3 trazado al PRD v0.3; S-0.1 identificado como escenario simulado; revisión de pendientes de implementación y validación'
-    doc.core_properties.keywords = 'Confirma, SRS, PRD v0.3, escenario simulado, requisitos, trazabilidad, idempotencia, NestJS, TypeScript'
+    doc.core_properties.keywords = 'Chulito, SRS, PRD v0.3, escenario simulado, requisitos, trazabilidad, idempotencia, NestJS, TypeScript'
     doc.core_properties.comments = 'Revisión metodológica: S-0.1 no son entrevistas; datos ficticios como supuesto de trabajo. ADR-0001 de compatibilidad y port a TypeScript/NestJS pendientes.'
 
     # Version, date and status on cover and document-control metadata.

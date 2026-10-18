@@ -8,7 +8,7 @@
 | Versión | SD-0.2 |
 | Fecha | 13 de octubre de 2026 |
 | Estado | Base operativa adoptada para planificación y diseño; sujeta a correcciones del responsable |
-| Proyecto | Confirma (nombre provisional) |
+| Proyecto | Chulito (nombre provisional) |
 | Documentos base | PRD v0.3; SRS v0.1; Guía de entrevistas v0.1; S-0.1 como base de trabajo |
 | Uso | Interno — borrador de trabajo |
 
@@ -60,7 +60,7 @@ Esta revisión consolida los documentos del proyecto y adopta los hallazgos y la
 
 El informe mantiene trazabilidad explícita a S-0.1 y usa sus valores dentro del alcance del proyecto; no los extrapola a todo el mercado ni los confunde con métricas de un producto en producción. Si el responsable corrige un registro, cifra o interpretación, se actualiza esta línea base y sus decisiones derivadas.
 
-**Regla de lectura:** “base operativa” significa que los valores se aceptan para orientar la planificación actual. Los objetivos de producto (por ejemplo, latencia, reducción del tiempo de cuadre o falsos positivos) siguen siendo metas de diseño/piloto, no resultados observados de Confirma.
+**Regla de lectura:** “base operativa” significa que los valores se aceptan para orientar la planificación actual. Los objetivos de producto (por ejemplo, latencia, reducción del tiempo de cuadre o falsos positivos) siguen siendo metas de diseño/piloto, no resultados observados de Chulito.
 
 ## 2. Base documental y estado de la información
 
@@ -77,7 +77,7 @@ El conjunto de valores aceptado identifica un segmento prioritario y consecuenci
 
 ### 3.1 Propuesta de valor operativa
 
-Confirma ayuda a un negocio pequeño con empleados a confirmar pagos digitales desde notificaciones del emisor, mostrar el estado al cajero sin exponer la cuenta financiera del dueño y reunir los movimientos de varios emisores en un libro diario. El registro debe distinguir confirmado, pendiente, dudoso y no reconocido; una coincidencia insuficiente no debe convertirse en confirmación automática.
+Chulito ayuda a un negocio pequeño con empleados a confirmar pagos digitales desde notificaciones del emisor, mostrar el estado al cajero sin exponer la cuenta financiera del dueño y reunir los movimientos de varios emisores en un libro diario. El registro debe distinguir confirmado, pendiente, dudoso y no reconocido; una coincidencia insuficiente no debe convertirse en confirmación automática.
 
 ### 3.2 Perfil prioritario y composición de la base
 
@@ -189,7 +189,7 @@ El SRS también propone REST/OpenAPI 3.1, un canal de tiempo real por definir en
 | Los formatos de notificación cambian. | Alto impacto; PRD RK2. | Parsers aislados/versionados, fixtures, cola de no reconocidos y alertas. |
 | Muestras reales podrían no estar disponibles o no ser utilizables. | Dependencia abierta; PRD R3 / SRS A3. | Definir esquema canónico y fixtures; no declarar cobertura real hasta probar muestras autorizadas. |
 | Alcance excesivo para un solo desarrollador. | Alto; PRD RK5/SRS. | Vertical slice pequeña; mantener reportes, CSV y aplicación móvil fuera del MVP inicial. |
-| Los emisores pueden mejorar verificadores/notificaciones. | Medio/alto; PRD RK6. | Verificar la cobertura actual antes de decidir; diferenciar Confirma por visibilidad entre roles y cuadre multiemisor. |
+| Los emisores pueden mejorar verificadores/notificaciones. | Medio/alto; PRD RK6. | Verificar la cobertura actual antes de decidir; diferenciar Chulito por visibilidad entre roles y cuadre multiemisor. |
 | Supuesto regulatorio del SRS podría ser incorrecto o incompleto. | Alto antes de piloto. | Revisión legal local; no inferir una exención únicamente porque el producto no custodie fondos. |
 
 ## 8. Plan de avance con la línea base S-0.1
@@ -266,9 +266,9 @@ El equipo puede avanzar desde ahora con la trazabilidad PRD–SRS, un ADR de cap
 
 ## 12. Fuentes documentales
 
-- **[D1]** *Documento de requisitos del producto (PRD)*, CNF-PRD-001, v0.3, 12 de octubre de 2026. Archivo: `PRD_Confirma_v0.3_ISO29148.pdf`.
-- **[D2]** *Especificación de requisitos de software (SRS)*, CNF-SRS-001, v0.1. Archivo: `SRS_Confirma_v0.1_29148_estructura_alineada.pdf` y su DOCX editable. El contenido declara derivación del PRD v0.2.
-- **[D3]** *Guía de entrevistas de validación*, CNF-GEI-001, v0.1, 11 de octubre de 2026. Archivo: `Guia_Entrevistas_Confirma_v0.1_IEEE.pdf`.
-- **[D4]** *Informe de síntesis de investigación — Hallazgos de descubrimiento*, CNF-HAL-001-S, S-0.1. Archivo: `Informe_Sintesis_Investigacion_Confirma_S-0.1.pdf`. Base operativa adoptada por el responsable para decisiones de esta iteración; los valores se conservan con su fuente y se usan para priorización interna, no como proyección de mercado.
+- **[D1]** *Documento de requisitos del producto (PRD)*, CNF-PRD-001, v0.3, 12 de octubre de 2026. Archivo: `PRD_Chulito_v0.3_ISO29148.pdf`.
+- **[D2]** *Especificación de requisitos de software (SRS)*, CNF-SRS-001, v0.1. Archivo: `SRS_Chulito_v0.1_29148_estructura_alineada.pdf` y su DOCX editable. El contenido declara derivación del PRD v0.2.
+- **[D3]** *Guía de entrevistas de validación*, CNF-GEI-001, v0.1, 11 de octubre de 2026. Archivo: `Guia_Entrevistas_Chulito_v0.1_IEEE.pdf`.
+- **[D4]** *Informe de síntesis de investigación — Hallazgos de descubrimiento*, CNF-HAL-001-S, S-0.1. Archivo: `Informe_Sintesis_Investigacion_Chulito_S-0.1.pdf`. Base operativa adoptada por el responsable para decisiones de esta iteración; los valores se conservan con su fuente y se usan para priorización interna, no como proyección de mercado.
 
 **Nota metodológica:** la mención de ISO/IEC/IEEE 29148 en PRD y SRS describe una alineación estructural/metodológica seleccionada. No es certificación ni declaración formal de conformidad con la norma.

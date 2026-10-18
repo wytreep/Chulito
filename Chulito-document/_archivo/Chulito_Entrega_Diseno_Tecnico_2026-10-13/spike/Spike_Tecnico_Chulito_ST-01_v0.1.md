@@ -1,4 +1,4 @@
-# Confirma — Spike técnico ST-01
+# Chulito — Spike técnico ST-01
 ## Canales de captura y modelo canónico de notificación
 
 **Versión:** 0.1  
@@ -70,7 +70,7 @@ El adaptador traduce el formato del canal a un envelope; la lógica de conciliac
 | `source_name` | string | Remitente o nombre/paquete de la app; metadato para seleccionar parser. |
 | `title` | string nullable | Asunto o título. |
 | `text` | string transitorio | Texto necesario para parsear; no persistir sin cifrado, acceso y retención definidos. |
-| `received_at_utc` | timestamp | Momento de recepción por Confirma, normalizado a UTC. |
+| `received_at_utc` | timestamp | Momento de recepción por Chulito, normalizado a UTC. |
 | `payload_fingerprint` | SHA-256 | Huella derivada de campos del mensaje; no sustituye la identidad de transacción. |
 
 ### 4.2 `PaymentNotice`
@@ -127,7 +127,7 @@ Las consultas de candidatos siempre quedan limitadas al negocio. El cajero puede
 
 ## 7. Implementación y resultados
 
-La vertical slice (`confirma_vertical_slice.py`) utiliza `sqlite3` en memoria, un parser de fixture sintético y dos adaptadores simples. No escribe el texto crudo en la base de datos. Se ejecuta con:
+La vertical slice (`chulito_vertical_slice.py`) utiliza `sqlite3` en memoria, un parser de fixture sintético y dos adaptadores simples. No escribe el texto crudo en la base de datos. Se ejecuta con:
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -173,7 +173,7 @@ Este protocolo es una **propuesta de salida del spike**, no una decisión aproba
 | Idempotencia | Reentregar muestras idénticas varias veces y observar el mismo pago por ambos canales. | Cero pagos duplicados en el libro; conservar trazas de cada evento de captura. |
 | Seguridad de conciliación | Probar coincidencia, monto/referencia discrepantes, falta de referencia y dos cobros candidatos. | Cero falsos `confirmed`; todos los ambiguos o discrepantes quedan en revisión/dudoso. |
 | Privacidad | Enviar mensajes ajenos al allowlist/filtro y revisar almacenamiento, logs, permisos y contenido capturado. | Cero mensajes ajenos persistidos o enviados al servicio; contenido crudo cifrado y acceso/retención verificables antes de piloto. |
-| Control del usuario | Medir configuración, revocación, reinstalación y pérdida de conectividad. | La persona entiende el alcance del permiso; al revocarlo, la captura se detiene y el estado se refleja en Confirma. |
+| Control del usuario | Medir configuración, revocación, reinstalación y pérdida de conectividad. | La persona entiende el alcance del permiso; al revocarlo, la captura se detiene y el estado se refleja en Chulito. |
 
 Registrar por canal/emisor: cobertura, percentiles de latencia, campos ausentes, fallos, falsos duplicados, falsas conciliaciones, tiempo de configuración, pasos de revocación y observaciones del dueño/cajero. Elegir el canal por cobertura necesaria, minimización de datos, fricción de configuración, seguridad y costo de soporte; documentar la decisión en ADR.
 

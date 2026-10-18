@@ -1,4 +1,4 @@
-# Fuentes oficiales consultadas — canales de captura de Confirma
+# Fuentes oficiales consultadas — canales de captura de Chulito
 
 **Fecha de consulta:** 13 de octubre de 2026  
 **Uso:** insumo para el spike técnico de selección de canal. Las notas distinguen hechos publicados de conclusiones de diseño.
@@ -15,7 +15,7 @@
    URL: <https://developer.android.com/reference/android/provider/Settings#ACTION_NOTIFICATION_LISTENER_SETTINGS>  
    La acción abre los ajustes de acceso de listeners de notificaciones (añadida en API 22). En la práctica del producto, la captura necesita que la persona usuaria habilite el listener desde esos ajustes; el prototipo debe comprobar la experiencia y el comportamiento en las versiones/dispositivos objetivo. La concesión no debe presentarse como automática.
 
-**Implicación de diseño:** Android puede cubrir notificaciones emitidas por apps instaladas, no solo correo, pero exige un componente Android y una autorización de acceso de notificaciones en el dispositivo. El listener es una capacidad a nivel del sistema; se debe aplicar allowlist de paquetes en el dispositivo, minimizar contenido recolectado y medir revocación, reinicios y restricciones de fabricante. La referencia no garantiza que los emisores concretos de Confirma publiquen los campos requeridos en sus notificaciones.
+**Implicación de diseño:** Android puede cubrir notificaciones emitidas por apps instaladas, no solo correo, pero exige un componente Android y una autorización de acceso de notificaciones en el dispositivo. El listener es una capacidad a nivel del sistema; se debe aplicar allowlist de paquetes en el dispositivo, minimizar contenido recolectado y medir revocación, reinicios y restricciones de fabricante. La referencia no garantiza que los emisores concretos de Chulito publiquen los campos requeridos en sus notificaciones.
 
 ## Gmail: lectura por API y reenvío selectivo
 
@@ -27,7 +27,7 @@
    URL: <https://support.google.com/mail/answer/10957?hl=en>  
    Gmail permite reenviar todos los mensajes o solo los que coinciden con criterios de filtros. Al agregar una dirección de reenvío se envía un enlace de verificación a esa dirección. Para reenviar mensajes seleccionados, se desactiva el reenvío global y se configura un filtro con la acción `Forward it`.
 
-**Implicación de diseño:** leer una cuenta Gmail mediante OAuth desde Confirma representa una carga de autorización y verificación elevada para el MVP. El reenvío mediante filtro puede limitar los correos enviados al servicio y evita que Confirma lea el buzón mediante un scope API, pero conserva una transferencia de contenido, requiere configuración/verificación por la persona dueña y aplica principalmente si el emisor notifica por correo. No elimina las obligaciones de privacidad, retención ni seguridad.
+**Implicación de diseño:** leer una cuenta Gmail mediante OAuth desde Chulito representa una carga de autorización y verificación elevada para el MVP. El reenvío mediante filtro puede limitar los correos enviados al servicio y evita que Chulito lea el buzón mediante un scope API, pero conserva una transferencia de contenido, requiere configuración/verificación por la persona dueña y aplica principalmente si el emisor notifica por correo. No elimina las obligaciones de privacidad, retención ni seguridad.
 
 ## Conclusión provisional (no es ADR de decisión final)
 

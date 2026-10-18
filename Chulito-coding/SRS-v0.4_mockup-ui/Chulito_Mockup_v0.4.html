@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chulito — Mockup v0.4 (datos sintéticos)</title>
+<style>
+  :root {
+    --navy: #0f2a47; --teal: #0e9f8e; --tealD: #0b7a6e; --ink: #1f2933; --muted: #667085;
+    --line: #d0d5dd; --bg: #f4f6f9; --white: #ffffff;
+    --ok: #1f6b3a; --okBg: #e4f3ea; --warn: #7a4b00; --warnBg: #fff3d6;
+    --bad: #9b1c1c; --badBg: #fde8e6; --info: #0b4a8a; --infoBg: #e5efff;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Calibri, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--bg); font-size: 15px; }
+  .banner { background: #fdecea; color: var(--bad); border-bottom: 2px solid #c0392b; padding: 8px 16px; font-weight: 700; text-align: center; font-size: 13px; }
+  header.top { background: var(--navy); color: #fff; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  header.top .brand { font-family: Cambria, Georgia, serif; font-weight: 700; letter-spacing: 3px; font-size: 20px; }
+  header.top .brand span { color: #5ee0cf; }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tabs button { background: transparent; color: #cfe3f3; border: 1px solid #3a5a7c; border-radius: 6px; padding: 7px 12px; cursor: pointer; font: inherit; font-size: 13px; }
+  .tabs button.on { background: var(--teal); border-color: var(--teal); color: #fff; font-weight: 700; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 18px; }
+  .screen { display: none; }
+  .screen.on { display: block; }
+  h2 { font-family: Cambria, Georgia, serif; color: var(--navy); margin: 4px 0 4px; font-size: 22px; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+  .card { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+  .kpi .l { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 700; }
+  .kpi .v { font-size: 22px; font-weight: 700; color: var(--navy); margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { background: var(--navy); color: #fff; text-align: left; padding: 8px 10px; font-weight: 600; font-size: 13px; }
+  td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:nth-child(even) td { background: #f6f8fb; }
+  .pill { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+  .p-pend { background: var(--infoBg); color: var(--info); }
+  .p-ok { background: var(--okBg); color: var(--ok); }
+  .p-dud { background: var(--warnBg); color: var(--warn); }
+  .p-venc { background: #ececec; color: #444; }
+  .p-deg { background: var(--badBg); color: var(--bad); }
+  .p-ua { background: var(--infoBg); color: var(--info); }
+  button.act { background: var(--teal); color: #fff; border: 0; border-radius: 7px; padding: 8px 14px; cursor: pointer; font: inherit; font-weight: 700; }
+  button.act:hover { background: var(--tealD); }
+  button.sec { background: #fff; color: var(--navy); border: 1px solid var(--navy); border-radius: 7px; padding: 7px 12px; cursor: pointer; font: inherit; font-size: 13px; }
+  button.danger { background: #fff; color: var(--bad); border: 1px solid var(--bad); border-radius: 7px; padding: 7px 12px; cursor: pointer; font: inherit; font-size: 13px; }
+  input, select { font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px; width: 100%; background: #fff; }
+  label { font-size: 12px; font-weight: 700; color: var(--muted); display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: .5px; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
+  .row > * { flex: 1 1 180px; }
+  .callout { border-left: 5px solid var(--teal); background: #eaf6f4; padding: 10px 14px; border-radius: 6px; font-size: 13px; margin-bottom: 14px; }
+  .callout.warn { border-color: #d9822b; background: #fff6e8; }
+  .callout.bad { border-color: #c0392b; background: #fdecea; }
+  .live { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--ok); margin-right: 6px; }
+  .live.off { background: var(--bad); }
+  .live.deg { background: #d9822b; }
+  .muted { color: var(--muted); font-size: 13px; }
+  .toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: var(--navy); color: #fff; padding: 10px 16px; border-radius: 8px; font-size: 14px; display: none; z-index: 9; }
+  .modal { position: fixed; inset: 0; background: rgba(15,42,71,.55); display: none; align-items: center; justify-content: center; z-index: 10; padding: 16px; }
+  .modal.on { display: flex; }
+  .modal .box { background: #fff; border-radius: 12px; padding: 20px; max-width: 460px; width: 100%; }
+  .scale { font-size: 12px; color: var(--muted); }
+  .phone { max-width: 380px; margin: 0 auto; background: #fff; border: 10px solid #1b2a3a; border-radius: 28px; padding: 14px; }
+  @media (max-width: 640px) { .wrap { padding: 12px; } th, td { font-size: 12px; padding: 6px; } }
+</style>
+</head>
+<body>
+
+<div class="banner">MOCKUP DE PRUEBA — DATOS SINTÉTICOS. No es un producto en producción ni evidencia de campo.</div>
+
+<header class="top">
+  <div class="brand">CHULITO <span>■</span></div>
+  <nav class="tabs" aria-label="Pantallas">
+    <button data-s="login" class="on">Ingreso</button>
+    <button data-s="dueno">Dueño · Inicio</button>
+    <button data-s="cajero">Cajero · Cobros</button>
+    <button data-s="libro">Libro diario</button>
+    <button data-s="captura">Captura y avisos</button>
+    <button data-s="cajeros">Cajeros</button>
+    <button data-s="export">Exportar datos</button>
+    <button data-s="flujo">Estados del cobro</button>
+  </nav>
+</header>
+
+<div class="wrap">
+
+<!-- ========== INGRESO ========== -->
+<section class="screen on" id="s-login">
+  <h2>Ingreso</h2>
+  <div class="sub">Pantalla de acceso por negocio (tenant). SRS-F-02.</div>
+  <div class="phone">
+    <div style="text-align:center;font-family:Cambria,serif;font-weight:700;letter-spacing:3px;color:#0f2a47;margin:8px 0 14px">CHULITO</div>
+    <label>Correo o usuario</label>
+    <input value="dueno@negocio-ejemplo.co" aria-label="usuario">
+    <div style="height:10px"></div>
+    <label>Contraseña</label>
+    <input type="password" value="••••••••" aria-label="contraseña">
+    <div style="height:14px"></div>
+    <button class="act" style="width:100%" onclick="go('dueno');toast('Sesión de dueño iniciada (sintético)')">Entrar</button>
+    <div style="height:8px"></div>
+    <button class="sec" style="width:100%" onclick="go('cajero');toast('Sesión de cajero iniciada (sintético)')">Entrar como cajero</button>
+    <p class="muted" style="margin-top:12px">Las contraseñas se guardan con Argon2id; el cajero no ve credenciales ni configuración de captura (SRS-NFR-05, SRS-RN-05).</p>
+  </div>
+</section>
+
+<!-- ========== DUEÑO · INICIO ========== -->
+<section class="screen" id="s-dueno">
+  <h2>Tienda Ejemplo (sintética)</h2>
+  <div class="sub">Vista del dueño · hoy, 17 oct 2026 · zona America/Bogota (SRS-RN-06)</div>
+
+  <div class="grid" style="margin-bottom:14px">
+    <div class="card kpi"><div class="l">Cobros hoy</div><div class="v" id="kCobros">—</div></div>
+    <div class="card kpi"><div class="l">Confirmados</div><div class="v" id="kConf">—</div></div>
+    <div class="card kpi"><div class="l">Dudosos</div><div class="v" id="kDud">—</div></div>
+    <div class="card kpi"><div class="l">Captura</div><div class="v"><span class="live" id="liveDot"></span><span id="liveTxt" style="font-size:16px">Activa</span></div></div>
+  </div>
+
+  <div class="callout" id="calloutCaptura">Captura activa para este negocio. Consentimiento vigente desde 14-oct-2026 (versión 1.0). Puedes revocarlo en cualquier momento (SRS-F-10, UC-02).</div>
+
+  <div class="card">
+    <strong>Últimos eventos</strong>
+    <div class="muted" style="margin:4px 0 10px">Eventos sintéticos. Cada uno conserva la hora del pago (occurred_at) y la de recepción (received_at) por separado.</div>
+    <table>
+      <thead><tr><th>Hora del pago</th><th>Recibido</th><th>Emisor</th><th>Monto</th><th>Estado</th></tr></thead>
+      <tbody id="tblEventosDueno"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <strong>Acciones</strong>
+    <div class="row" style="margin-top:10px">
+      <button class="sec" onclick="go('captura')">Ver captura y avisos</button>
+      <button class="sec" onclick="go('cajeros')">Gestionar cajeros</button>
+      <button class="sec" onclick="go('libro')">Libro del día</button>
+      <button class="sec" onclick="go('export')">Exportar mis datos</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CAJERO · COBROS ========== -->
+<section class="screen" id="s-cajero">
+  <h2>Cobros · Cajero Ana (sintética)</h2>
+  <div class="sub">Vista del cajero. No ve credenciales, consentimientos administrativos ni configuración de captura (SRS-F-04).</div>
+
+  <div class="card">
+    <strong>Registrar cobro esperado</strong>
+    <div class="row" style="margin-top:10px">
+      <div><label>Monto (COP)</label><input id="inMonto" inputmode="numeric" value="25000"></div>
+      <div><label>Referencia (opcional)</label><input id="inRef" value="MESA-4"></div>
+      <div style="flex:0 0 auto"><button class="act" onclick="crearCobro()">Crear cobro</button></div>
+    </div>
+    <p class="muted" style="margin-top:8px">El cobro queda Pendiente hasta que llegue un pago compatible dentro de la ventana de 10 min (provisional, TBD-3).</p>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+      <strong>Cobros en curso</strong>
+      <span class="muted"><span class="live" id="liveDotC"></span><span id="liveTxtC">En vivo</span></span>
+    </div>
+    <div class="callout warn" id="calloutDeg" style="display:none;margin-top:10px">
+      <strong>Captura degradada.</strong> No llegan notificaciones desde hace varios minutos. Mostrar un cobro como pagado no está permitido; el sistema no rellena la ausencia con un pago (SRS-F-20).
+    </div>
+    <div style="margin-top:10px;overflow-x:auto">
+      <table>
+        <thead><tr><th>Hora</th><th>Monto</th><th>Referencia</th><th>Estado</th><th>Acción</th></tr></thead>
+        <tbody id="tblCobros"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LIBRO DIARIO ========== -->
+<section class="screen" id="s-libro">
+  <h2>Libro diario · 17 oct 2026</h2>
+  <div class="sub">Pagos de todos los emisores habilitados, en un solo libro (SRS-F-30). Filtra por emisor.</div>
+  <div class="card">
+    <div class="row" style="margin-bottom:10px">
+      <div><label>Emisor</label>
+        <select id="fEmisor" onchange="renderLibro()">
+          <option value="">Todos</option>
+          <option>Nequi</option><option>Daviplata</option><option>Banco A</option><option>Bre-B</option>
+        </select></div>
+      <div><label>Estado</label>
+        <select id="fEstado" onchange="renderLibro()">
+          <option value="">Todos</option><option>Confirmado</option><option>Dudoso</option><option>Tardío</option><option>Sin emparejar</option>
+        </select></div>
+    </div>
+    <div style="overflow-x:auto"><table>
+      <thead><tr><th>Hora del pago</th><th>Recibido</th><th>Emisor</th><th>Monto</th><th>Emparejado con</th><th>Estado</th></tr></thead>
+      <tbody id="tblLibro"></tbody>
+    </table></div>
+    <div class="grid" style="margin-top:14px">
+      <div class="card kpi"><div class="l">Total confirmado</div><div class="v" id="libroTot">—</div></div>
+      <div class="card kpi"><div class="l">Pendiente de revisión</div><div class="v" id="libroDud">—</div></div>
+    </div>
+    <p class="muted">Una brecha potencial no equivale a un pago perdido confirmado; no entra al total (SRS-F-31).</p>
+  </div>
+</section>
+
+<!-- ========== CAPTURA Y AVISOS ========== -->
+<section class="screen" id="s-captura">
+  <h2>Captura y avisos</h2>
+  <div class="sub">Estado del canal, consentimientos y avisos al dueño (SRS-F-15, SRS-F-10, UC-02).</div>
+
+  <div class="card">
+    <strong>Estado del canal</strong>
+    <div class="row" style="margin-top:10px">
+      <div><label>Canal</label><input value="Canal aprobado (TBD-1, por definir)" disabled></div>
+      <div><label>Última captura</label><input value="hace 42 s" disabled></div>
+      <div><label>Errores recientes (24 h)</label><input value="0" disabled></div>
+      <div><label>Reintentos pendientes</label><input value="0" disabled></div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <button class="sec" onclick="simularCaida()">Simular canal caído</button>
+      <button class="sec" onclick="simularRecuperacion()">Simular recuperación</button>
+    </div>
+    <p class="muted" style="margin-top:8px">Solo para demostrar el comportamiento. Un canal caído no crea pagos.</p>
+  </div>
+
+  <div class="card">
+    <strong>Consentimientos</strong>
+    <table style="margin-top:10px">
+      <thead><tr><th>Concepto</th><th>Versión</th><th>Otorgado</th><th>Estado</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>Captura de notificaciones del negocio</td><td>1.0</td><td>14-oct-2026</td><td><span class="pill p-ok" id="pillCap">Vigente</span></td><td><button class="danger" id="btnCap" onclick="toggleCaptura()">Revocar</button></td></tr>
+        <tr><td>Avisos de brecha por correo e in-app</td><td>1.0</td><td>14-oct-2026</td><td><span class="pill p-ok">Vigente</span></td><td><button class="danger" onclick="toast('Revocación de avisos registrada en auditoría (sintético)')">Revocar</button></td></tr>
+      </tbody>
+    </table>
+    <p class="muted" style="margin-top:8px">Revocar un consentimiento detiene nuevas capturas dentro de su alcance; los datos existentes se conservan según la política de retención (TBD-4). Queda registro en auditoría.</p>
+  </div>
+
+  <div class="card">
+    <strong>Avisos de brecha potencial</strong>
+    <table style="margin-top:10px">
+      <thead><tr><th>Hora</th><th>Señal observada</th><th>Canal</th><th>Acción del sistema</th></tr></thead>
+      <tbody>
+        <tr><td>14:05</td><td>Retraso de 4 min entre pago y recepción</td><td>Emisor A</td><td>Reintento; marcado como tardío (no confirmado)</td></tr>
+        <tr><td>11:32</td><td>Mensaje no reconocido</td><td>Emisor B</td><td>Conservado; pendiente de parser</td></tr>
+      </tbody>
+    </table>
+    <p class="muted" style="margin-top:8px">Un aviso informa una señal; no prueba que haya ocurrido un pago.</p>
+  </div>
+</section>
+
+<!-- ========== CAJEROS ========== -->
+<section class="screen" id="s-cajeros">
+  <h2>Cajeros</h2>
+  <div class="sub">Alta y revocación de cuentas de cajero (SRS-F-03, UC-01).</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>Nombre</th><th>Usuario</th><th>Estado</th><th>Último acceso</th><th></th></tr></thead>
+      <tbody id="tblCajeros"></tbody>
+    </table>
+  </div>
+  <div class="card">
+    <strong>Nuevo cajero</strong>
+    <div class="row" style="margin-top:10px">
+      <div><label>Nombre</label><input id="inNombre" placeholder="Nombre del cajero"></div>
+      <div><label>Usuario</label><input id="inUser" placeholder="usuario"></div>
+      <div style="flex:0 0 auto"><button class="act" onclick="crearCajero()">Crear cajero</button></div>
+    </div>
+    <p class="muted" style="margin-top:8px">Al revocar, las solicitudes siguientes de esa cuenta se rechazan (SRS-F-03).</p>
+  </div>
+</section>
+
+<!-- ========== EXPORTAR ========== -->
+<section class="screen" id="s-export">
+  <h2>Exportar mis datos</h2>
+  <div class="sub">Exportación estructurada del propio tenant (SRS-F-32, UC-06). Formatos propuestos: CSV y JSON.</div>
+  <div class="card">
+    <div class="row">
+      <div><label>Desde</label><input type="date" value="2026-10-01"></div>
+      <div><label>Hasta</label><input type="date" value="2026-10-17"></div>
+      <div><label>Datos</label>
+        <select><option>Pagos y cobros</option><option>Auditoría</option><option>Consentimientos</option><option>Todo lo permitido</option></select></div>
+      <div><label>Formato</label>
+        <select><option>CSV</option><option>JSON</option></select></div>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <button class="act" onclick="toast('Exportación generada y registrada en auditoría (sintético)')">Generar exportación</button>
+    </div>
+    <p class="muted" style="margin-top:10px">La exportación solo incluye datos de este negocio. Un cajero o un negocio ajeno recibe rechazo sin revelar si el otro existe (SRS-F-05).</p>
+  </div>
+</section>
+
+<!-- ========== FLUJO DE ESTADOS ========== -->
+<section class="screen" id="s-flujo">
+  <h2>Estados del cobro</h2>
+  <div class="sub">Transiciones según SRS-F-23 a SRS-F-25 y tabla T-01 a T-08 del SRS v0.4.</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>De</th><th>A</th><th>Condición</th><th>Regla</th></tr></thead>
+      <tbody>
+        <tr><td>—</td><td><span class="pill p-pend">Pendiente</span></td><td>El cajero registra un cobro esperado</td><td>SRS-F-21, F-23</td></tr>
+        <tr><td><span class="pill p-pend">Pendiente</span></td><td><span class="pill p-ok">Confirmado</span></td><td>Pago con monto y referencia compatibles dentro de 10 min</td><td>SRS-F-22, RN-02, RN-03</td></tr>
+        <tr><td><span class="pill p-pend">Pendiente</span></td><td><span class="pill p-dud">Dudoso</span></td><td>Monto o referencia no coinciden, o llega fuera de la ventana</td><td>SRS-F-24</td></tr>
+        <tr><td><span class="pill p-pend">Pendiente</span></td><td><span class="pill p-venc">Vencido</span></td><td>La ventana expira sin pago emparejado</td><td>SRS-F-23, RN-03</td></tr>
+        <tr><td><span class="pill p-dud">Dudoso</span></td><td><span class="pill p-ok">Confirmado</span></td><td>El dueño resuelve manualmente; el pago original no cambia</td><td>SRS-F-25, RN-04</td></tr>
+        <tr><td><span class="pill p-venc">Vencido</span></td><td><span class="pill p-dud">Dudoso</span></td><td>Llega un evento tardío; no se confirma automáticamente</td><td>SRS-F-24, F-30</td></tr>
+      </tbody>
+    </table>
+    <p class="muted" style="margin-top:10px">Un canal caído nunca produce una transición a Confirmado (T-07). La pantalla se llama "Confirmado" solo cuando la regla se cumple.</p>
+  </div>
+</section>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal" id="modal">
+  <div class="box">
+    <h2 id="mTitle">Confirmar</h2>
+    <p id="mText" class="muted"></p>
+    <div class="row" style="margin-top:12px;justify-content:flex-end">
+      <button class="sec" onclick="closeModal()">Cancelar</button>
+      <button class="act" id="mOk">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- Datos sintéticos (no reales) ---------- */
+const EMISORES = ["Nequi", "Daviplata", "Banco A", "Bre-B"];
+let captura = true;
+let canalCaido = false;
+
+let cobros = [
+  { id: 1, hora: "12:04", monto: 25000, ref: "MESA-4", estado: "Confirmado" },
+  { id: 2, hora: "12:19", monto: 12000, ref: "CAFE-2", estado: "Pendiente" },
+  { id: 3, hora: "12:33", monto: 45000, ref: "MESA-1", estado: "Dudoso" },
+  { id: 4, hora: "12:51", monto: 8000,  ref: "—",      estado: "Pendiente" },
+];
+
+let eventos = [
+  { occ: "12:04:10", rec: "12:04:12", emisor: "Nequi",     monto: 25000, estado: "Confirmado", emp: "MESA-4" },
+  { occ: "12:33:40", rec: "12:33:43", emisor: "Daviplata", monto: 2500,  estado: "Dudoso",     emp: "MESA-1" },
+  { occ: "11:58:02", rec: "12:04:31", emisor: "Bre-B",     monto: 30000, estado: "Tardío",     emp: "—" },
+  { occ: "11:32:15", rec: "11:32:16", emisor: "Banco A",   monto: 0,     estado: "No reconocido", emp: "—" },
+];
+
+let cajeros = [
+  { nombre: "Ana (sintética)",   user: "ana.caja",   activo: true,  ultimo: "hoy 12:40" },
+  { nombre: "Luis (sintético)",  user: "luis.caja",  activo: false, ultimo: "ayer 18:05" },
+];
+
+const pill = (e) => {
+  const m = {
+    "Pendiente": "p-pend", "Confirmado": "p-ok", "Dudoso": "p-dud", "Vencido": "p-venc",
+    "Tardío": "p-dud", "No reconocido": "p-ua", "Sin emparejar": "p-ua",
+  };
+  return `<span class="pill ${m[e] || 'p-ua'}">${e}</span>`;
+};
+const cop = (n) => n ? "$ " + n.toLocaleString("es-CO") : "—";
+
+function go(id) {
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("on"));
+  document.getElementById("s-" + id).classList.add("on");
+  document.querySelectorAll(".tabs button").forEach(b => b.classList.toggle("on", b.dataset.s === id));
+  renderAll();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => go(b.dataset.s));
+
+function toast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.style.display = "block";
+  clearTimeout(window._tt); window._tt = setTimeout(() => t.style.display = "none", 2600);
+}
+
+function renderDueno() {
+  const conf = cobros.filter(c => c.estado === "Confirmado").length;
+  const dud = cobros.filter(c => c.estado === "Dudoso").length;
+  document.getElementById("kCobros").textContent = cobros.length;
+  document.getElementById("kConf").textContent = conf;
+  document.getElementById("kDud").textContent = dud;
+  const d = document.getElementById("liveDot"), tx = document.getElementById("liveTxt");
+  d.className = "live" + (canalCaido ? " deg" : "");
+  tx.textContent = canalCaido ? "Degradada" : (captura ? "Activa" : "Detenida");
+  document.getElementById("calloutCaptura").textContent = captura
+    ? "Captura activa para este negocio. Consentimiento vigente desde 14-oct-2026 (versión 1.0). Puedes revocarlo en cualquier momento (SRS-F-10, UC-02)."
+    : "Captura detenida por revocación del consentimiento. Los datos existentes se conservan según la política de retención (TBD-4) y queda registro en auditoría.";
+  document.getElementById("tblEventosDueno").innerHTML = eventos.map(e => `
+    <tr><td>${e.occ}</td><td>${e.rec}</td><td>${e.emisor}</td><td>${e.monto ? cop(e.monto) : "—"}</td><td>${pill(e.estado)}</td></tr>`).join("");
+}
+
+function renderCajero() {
+  document.getElementById("calloutDeg").style.display = canalCaido ? "block" : "none";
+  document.getElementById("liveDotC").className = "live" + (canalCaido ? " deg" : "");
+  document.getElementById("liveTxtC").textContent = canalCaido ? "Captura degradada" : "En vivo";
+  document.getElementById("tblCobros").innerHTML = cobros.map(c => `
+    <tr><td>${c.hora}</td><td>${cop(c.monto)}</td><td>${c.ref}</td><td>${pill(c.estado)}</td>
+    <td>${c.estado === "Pendiente" ? `<button class="sec" onclick="simularPago(${c.id})">Simular pago</button>` :
+         c.estado === "Dudoso" ? `<button class="sec" onclick="resolverDudoso(${c.id})">Resolver (dueño)</button>` : "—"}</td></tr>`).join("");
+}
+
+function renderLibro() {
+  const fE = document.getElementById("fEmisor").value;
+  const fS = document.getElementById("fEstado").value;
+  const rows = eventos.filter(e => (!fE || e.emisor === fE) && (!fS || e.estado === fS));
+  document.getElementById("tblLibro").innerHTML = rows.length ? rows.map(e => `
+    <tr><td>${e.occ}</td><td>${e.rec}</td><td>${e.emisor}</td><td>${cop(e.monto)}</td><td>${e.emp}</td><td>${pill(e.estado)}</td></tr>`).join("")
+    : `<tr><td colspan="6" class="muted">Sin registros con esos filtros.</td></tr>`;
+  const tot = eventos.filter(e => e.estado === "Confirmado").reduce((a, e) => a + e.monto, 0);
+  const dud = eventos.filter(e => e.estado === "Dudoso" || e.estado === "Tardío").length;
+  document.getElementById("libroTot").textContent = cop(tot);
+  document.getElementById("libroDud").textContent = dud;
+}
+
+function renderCajeros() {
+  document.getElementById("tblCajeros").innerHTML = cajeros.map((c, i) => `
+    <tr><td>${c.nombre}</td><td>${c.user}</td>
+    <td>${c.activo ? '<span class="pill p-ok">Activo</span>' : '<span class="pill p-venc">Revocado</span>'}</td>
+    <td>${c.ultimo}</td>
+    <td>${c.activo ? `<button class="danger" onclick="revocar(${i})">Revocar</button>` : "—"}</td></tr>`).join("");
+}
+
+function renderAll() { renderDueno(); renderCajero(); renderLibro(); renderCajeros(); renderCaptura(); }
+function renderCaptura() {
+  document.getElementById("pillCap").className = "pill " + (captura ? "p-ok" : "p-venc");
+  document.getElementById("pillCap").textContent = captura ? "Vigente" : "Revocado";
+  document.getElementById("btnCap").textContent = captura ? "Revocar" : "Volver a otorgar";
+}
+
+/* ---------- Acciones (todas sintéticas) ---------- */
+function crearCobro() {
+  const monto = parseInt(document.getElementById("inMonto").value.replace(/\D/g, ""), 10);
+  const ref = document.getElementById("inRef").value.trim() || "—";
+  if (!monto) { toast("Escribe un monto válido"); return; }
+  const now = new Date();
+  const hora = now.toTimeString().slice(0, 5);
+  cobros.unshift({ id: Date.now(), hora, monto, ref, estado: "Pendiente" });
+  renderAll(); toast("Cobro creado en estado Pendiente");
+}
+
+function simularPago(id) {
+  const c = cobros.find(x => x.id === id); if (!c) return;
+  if (canalCaido) { toast("Canal caído: no se puede confirmar ningún pago"); return; }
+  c.estado = "Confirmado";
+  eventos.unshift({ occ: c.hora + ":00", rec: c.hora + ":02", emisor: "Nequi", monto: c.monto, estado: "Confirmado", emp: c.ref });
+  renderAll(); toast("Pago compatible emparejado: Confirmado");
+}
+
+function resolverDudoso(id) {
+  const c = cobros.find(x => x.id === id); if (!c) return;
+  openModal("Resolver cobro dudoso",
+    "Solo el dueño puede confirmar manualmente. El pago original no se modifica; la decisión queda en auditoría (SRS-F-25).",
+    () => { c.estado = "Confirmado"; renderAll(); toast("Resolución registrada en auditoría (sintético)"); });
+}
+
+function toggleCaptura() {
+  if (captura) {
+    openModal("Revocar captura", "Se detienen las nuevas capturas del negocio. Los datos existentes se conservan según la política de retención. Queda registro en auditoría.",
+      () => { captura = false; renderAll(); toast("Captura revocada y registrada en auditoría"); });
+  } else { captura = true; renderAll(); toast("Captura habilitada de nuevo (nuevo consentimiento)"); }
+}
+
+function simularCaida() { canalCaido = true; renderAll(); toast("Canal caído: estado degradado, sin pagos sintéticos"); }
+function simularRecuperacion() { canalCaido = false; renderAll(); toast("Canal recuperado; se reintentan eventos pendientes"); }
+
+function revocar(i) {
+  openModal("Revocar cajero", `Las solicitudes siguientes de ${cajeros[i].user} serán rechazadas (SRS-F-03).`,
+    () => { cajeros[i].activo = false; renderAll(); toast("Cajero revocado"); });
+}
+function crearCajero() {
+  const n = document.getElementById("inNombre").value.trim();
+  const u = document.getElementById("inUser").value.trim();
+  if (!n || !u) { toast("Completa nombre y usuario"); return; }
+  cajeros.push({ nombre: n + " (sintético)", user: u, activo: true, ultimo: "nunca" });
+  document.getElementById("inNombre").value = ""; document.getElementById("inUser").value = "";
+  renderAll(); toast("Cajero creado");
+}
+
+let _ok = null;
+function openModal(t, txt, ok) { document.getElementById("mTitle").textContent = t; document.getElementById("mText").textContent = txt; _ok = ok; document.getElementById("modal").classList.add("on"); }
+function closeModal() { document.getElementById("modal").classList.remove("on"); }
+document.getElementById("mOk").onclick = () => { if (_ok) _ok(); closeModal(); };
+document.getElementById("modal").addEventListener("click", e => { if (e.target.id === "modal") closeModal(); });
+
+renderAll();
+</script>
+</body>
+</html>

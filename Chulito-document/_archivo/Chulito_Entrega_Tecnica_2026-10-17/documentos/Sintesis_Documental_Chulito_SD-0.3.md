@@ -8,7 +8,7 @@
 | Versión | SD-0.3 |
 | Fecha | 17 de octubre de 2026 |
 | Estado | Borrador revisado; S-0.1 es un escenario simulado, no evidencia de campo |
-| Proyecto | Confirma (nombre provisional) |
+| Proyecto | Chulito (nombre provisional) |
 | Documentos base | PRD v0.3; SRS v0.3; Guía de entrevistas v0.1; S-0.1 (escenario simulado) |
 | Uso | Interno — borrador de trabajo |
 
@@ -64,7 +64,7 @@ Esta revisión consolida los documentos del proyecto y trata S-0.1 como escenari
 
 El informe mantiene trazabilidad a S-0.1 e identifica sus valores como ficticios. No son resultados de entrevistas, no deben presentarse como preferencias o métricas reales, ni extrapolarse al mercado. Cuando haya evidencia de campo, se registrará por separado y se revisarán las hipótesis y decisiones derivadas.
 
-**Regla de lectura:** “supuesto de trabajo” significa una hipótesis explícita y provisional para orientar experimentos técnicos, no evidencia que confirme una necesidad o preferencia. Los objetivos de producto (por ejemplo, latencia, reducción del tiempo de cuadre o falsos positivos) siguen siendo metas, no resultados observados de Confirma.
+**Regla de lectura:** “supuesto de trabajo” significa una hipótesis explícita y provisional para orientar experimentos técnicos, no evidencia que confirme una necesidad o preferencia. Los objetivos de producto (por ejemplo, latencia, reducción del tiempo de cuadre o falsos positivos) siguen siendo metas, no resultados observados de Chulito.
 
 ## 2. Base documental y estado de la información
 
@@ -81,7 +81,7 @@ El escenario no identifica empíricamente un segmento prioritario ni valida cons
 
 ### 3.1 Hipótesis de propuesta de valor
 
-La hipótesis de valor por validar es que Confirma ayude a un negocio pequeño con empleados a confirmar pagos digitales desde notificaciones del emisor, mostrar el estado al cajero sin exponer la cuenta financiera del dueño y reunir movimientos de varios emisores en un libro diario. El comportamiento propuesto debe distinguir confirmado, pendiente, dudoso y no reconocido; una coincidencia insuficiente no debe convertirse en confirmación automática.
+La hipótesis de valor por validar es que Chulito ayude a un negocio pequeño con empleados a confirmar pagos digitales desde notificaciones del emisor, mostrar el estado al cajero sin exponer la cuenta financiera del dueño y reunir movimientos de varios emisores en un libro diario. El comportamiento propuesto debe distinguir confirmado, pendiente, dudoso y no reconocido; una coincidencia insuficiente no debe convertirse en confirmación automática.
 
 ### 3.2 Perfil prioritario y composición de la base
 
@@ -195,7 +195,7 @@ El SRS también propone REST/OpenAPI 3.1, un canal de tiempo real por definir en
 | Los formatos de notificación cambian. | Alto impacto; PRD RK2. | Parsers aislados/versionados, fixtures, cola de no reconocidos y alertas. |
 | Muestras reales podrían no estar disponibles o no ser utilizables. | Dependencia abierta; PRD R3 / SRS A3. | Definir esquema canónico y fixtures; no declarar cobertura real hasta probar muestras autorizadas. |
 | Alcance excesivo para un solo desarrollador. | Alto; PRD RK5/SRS. | Vertical slice pequeña; mantener reportes, CSV y aplicación móvil fuera del MVP inicial. |
-| Los emisores pueden mejorar verificadores/notificaciones. | Medio/alto; PRD RK6. | Verificar la cobertura actual antes de decidir; diferenciar Confirma por visibilidad entre roles y cuadre multiemisor. |
+| Los emisores pueden mejorar verificadores/notificaciones. | Medio/alto; PRD RK6. | Verificar la cobertura actual antes de decidir; diferenciar Chulito por visibilidad entre roles y cuadre multiemisor. |
 | Supuesto regulatorio del SRS podría ser incorrecto o incompleto. | Alto antes de piloto. | Revisión legal local; no inferir una exención únicamente porque el producto no custodie fondos. |
 
 ## 8. Plan de avance: supuestos, validación y riesgos técnicos
@@ -273,9 +273,9 @@ El equipo puede avanzar con pruebas técnicas basadas en eventos sintéticos. La
 
 ## 12. Fuentes documentales
 
-- **[D1]** *Documento de requisitos del producto (PRD)*, CNF-PRD-001, v0.3, 12 de octubre de 2026. Archivo: `PRD_Confirma_v0.3_ISO29148.pdf`.
-- **[D2]** *Especificación de requisitos de software (SRS)*, CNF-SRS-001, v0.3. Archivo: `SRS_Confirma_v0.3_29148_alineacion_estructural.pdf` y su DOCX editable. Derivado del PRD v0.3; pendiente de revisión y aprobación.
-- **[D3]** *Guía de entrevistas de validación*, CNF-GEI-001, v0.1, 11 de octubre de 2026. Archivo: `Guia_Entrevistas_Confirma_v0.1_IEEE.pdf`.
-- **[D4]** *Informe de síntesis de investigación — Hallazgos de descubrimiento*, CNF-HAL-001-S, S-0.1. Archivo: `Informe_Hallazgos_Confirma_S-0.1_Escenario_Simulado.pdf`. S-0.1 es un escenario simulado, no resultados de entrevistas realizadas. Las cifras son ficticias y solo se conservan como supuesto de trabajo; no son evidencia ni proyección de mercado.
+- **[D1]** *Documento de requisitos del producto (PRD)*, CNF-PRD-001, v0.3, 12 de octubre de 2026. Archivo: `PRD_Chulito_v0.3_ISO29148.pdf`.
+- **[D2]** *Especificación de requisitos de software (SRS)*, CNF-SRS-001, v0.3. Archivo: `SRS_Chulito_v0.3_29148_alineacion_estructural.pdf` y su DOCX editable. Derivado del PRD v0.3; pendiente de revisión y aprobación.
+- **[D3]** *Guía de entrevistas de validación*, CNF-GEI-001, v0.1, 11 de octubre de 2026. Archivo: `Guia_Entrevistas_Chulito_v0.1_IEEE.pdf`.
+- **[D4]** *Informe de síntesis de investigación — Hallazgos de descubrimiento*, CNF-HAL-001-S, S-0.1. Archivo: `Informe_Hallazgos_Chulito_S-0.1_Escenario_Simulado.pdf`. S-0.1 es un escenario simulado, no resultados de entrevistas realizadas. Las cifras son ficticias y solo se conservan como supuesto de trabajo; no son evidencia ni proyección de mercado.
 
 **Nota metodológica:** la mención de ISO/IEC/IEEE 29148 en PRD y SRS describe una alineación estructural/metodológica seleccionada. No es certificación ni declaración formal de conformidad con la norma.

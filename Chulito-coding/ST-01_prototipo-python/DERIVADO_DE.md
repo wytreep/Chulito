@@ -16,4 +16,4 @@ SRS-F-10 a F-14, F-22 a F-24 y SRS-NFR-04 como especificación ejecutable, con d
 
 ## Nota de nombres
 
-El módulo se renombró de `confirma_vertical_slice.py` (nombre anterior del proyecto) a `chulito_vertical_slice.py`; `run_demo.py` y `tests/` importan el nombre nuevo. El `.docx` de ST-01 v0.3 conserva la mención histórica al nombre anterior al describir la ejecución de esa revisión.
+El módulo del prototipo es `chulito_vertical_slice.py`; `run_demo.py` y `tests/` importan ese nombre. Los paquetes anteriores conservan, en su propia documentación, la mención al nombre previo del proyecto.

@@ -6,7 +6,7 @@ from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
-OUT = Path('/home/ubuntu/Confirma_Entrega_Tecnica_2026-10-17/referencias')
+OUT = Path('/home/ubuntu/Chulito_Entrega_Tecnica_2026-10-17/referencias')
 DOCX = OUT / 'Aclaracion_Metodologica_PRD_v0.3.docx'
 NAVY = '17365D'
 BLUE = '246A8D'
@@ -52,7 +52,7 @@ def main():
 
     sub = doc.add_paragraph()
     sub.paragraph_format.space_after = Pt(18)
-    r = sub.add_run('Complemento editorial para acompañar el PRD Confirma v0.3')
+    r = sub.add_run('Complemento editorial para acompañar el PRD Chulito v0.3')
     r.font.name = 'Arial'; r.font.size = Pt(12); r.font.color.rgb = RGBColor.from_string(BLUE)
 
     table = doc.add_table(rows=0, cols=2)
@@ -95,7 +95,7 @@ def main():
     r = footer.add_run('Uso interno · Complemento editorial · 17-oct-2026')
     r.font.name='Arial'; r.font.size=Pt(8); r.font.color.rgb=RGBColor.from_string('687887')
 
-    doc.core_properties.title = 'Aclaración metodológica del PRD Confirma v0.3'
+    doc.core_properties.title = 'Aclaración metodológica del PRD Chulito v0.3'
     doc.core_properties.subject = DISCLAIMER
     doc.core_properties.comments = 'Anexo editorial separado; no altera el PRD fuente.'
     doc.save(DOCX)
