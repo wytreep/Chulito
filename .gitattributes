@@ -1,0 +1,16 @@
+# Normalizar finales de línea; los scripts de shell siempre con LF
+* text=auto
+*.sh text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+*.ts text eol=lf
+*.mjs text eol=lf
+*.py text eol=lf
+
+# Binarios (no intentar diff de texto)
+*.docx binary
+*.xlsx binary
+*.pdf binary
+*.png binary
+*.jpg binary

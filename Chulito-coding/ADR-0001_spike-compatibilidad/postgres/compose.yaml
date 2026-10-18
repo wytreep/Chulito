@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: chulito_spike
+      POSTGRES_USER: chulito_spike
+      POSTGRES_PASSWORD: local_only_chulito_spike
+    ports:
+      - "127.0.0.1:54329:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chulito_spike -d chulito_spike"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:

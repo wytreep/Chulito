@@ -1,0 +1,34 @@
+# Dependencias y compilación
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Secretos y entornos (nunca versionar)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Temporales de Word y de trabajo
+~$*.docx
+~$*.xlsx
+*.tmp
+*.log
+
+# Datos reales: este repositorio solo admite datos sintéticos
+/datos-reales/
+/muestras-reales/
