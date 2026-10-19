@@ -9,6 +9,7 @@
 *.py text eol=lf
 
 # Binarios (no intentar diff de texto)
+*.zip binary
 *.docx binary
 *.xlsx binary
 *.pdf binary

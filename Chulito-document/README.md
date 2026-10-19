@@ -1,6 +1,6 @@
 # Chulito-document
 
-Documentos del proyecto. Se numera por tipo; dentro de cada carpeta va la **versión vigente** y, junto a cada `.docx`, su `.pdf` generado desde él. Las entregas previas al paquete v0.4 se conservan como `.zip` en `_archivo/`, junto a la carpeta `documentos-word-iniciales/`.
+Documentos del proyecto. Se numera por tipo; dentro de cada carpeta va la **versión vigente** y, junto a cada `.docx`, su `.pdf` generado desde él. Las entregas previas al paquete v0.4 se conservan como `.zip` en `_archivo/`, junto a la carpeta `versiones-anteriores/`.
 
 | Carpeta | Contenido | Estado |
 |---|---|---|
