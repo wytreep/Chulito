@@ -28,6 +28,8 @@ Thumbs.db
 ~$*.xlsx
 *.tmp
 *.log
+# Excepción: logs conservados como evidencia (spike TBD-8)
+!Chulito-document/03-arquitectura-decisiones/spikes/TBD-8_compatibilidad/evidence/*.log
 
 # Datos reales: este repositorio solo admite datos sintéticos
 /datos-reales/

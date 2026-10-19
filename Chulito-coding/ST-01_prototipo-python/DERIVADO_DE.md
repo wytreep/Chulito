@@ -3,7 +3,7 @@
 | Documento origen | Ruta |
 |---|---|
 | SRS v0.4 (criterios Gherkin §4, modelo de datos §8) | `Chulito-document/02-requisitos/srs/` |
-| ST-01 v0.3 (canales y modelo canónico) | `Chulito-document/03-arquitectura-decisiones/spikes/` |
+| ST-01 v0.3 (canales y modelo canónico) | `Chulito-document/03-arquitectura-decisiones/spikes/ST-01_canales/` |
 
 ## Qué cubre
 

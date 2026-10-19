@@ -3,7 +3,7 @@
 | Documento origen | Ruta |
 |---|---|
 | ADR-0001 (baseline Node, TypeScript, NestJS) | `Chulito-document/03-arquitectura-decisiones/adr/` |
-| Plan y evidencia del spike TBD-8 | `Chulito-document/03-arquitectura-decisiones/spikes/` |
+| Plan y evidencia del spike TBD-8 | `Chulito-document/03-arquitectura-decisiones/spikes/TBD-8_compatibilidad/` |
 
 ## Qué cubre
 

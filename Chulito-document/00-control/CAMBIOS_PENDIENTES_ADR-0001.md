@@ -2,7 +2,7 @@
 
 Base original: el paquete `Chulito_TBD8_ADR0001_2026-10-18.zip` **sin modificar**.
 Cada punto fue comprobado contra ese paquete, el lockfile o el registro de npm el 2026-10-18.
-Las rutas originales eran relativas a `chulito-api/`; el harness vive ahora en `Chulito-coding/ADR-0001_spike-compatibilidad/`.
+Las rutas originales eran relativas a `chulito-api/`; el harness vive ahora en `Chulito-coding/ADR-0001_spike-compatibilidad/`. Por eso las rutas de las filas A4–A6 describen el paquete original; en este repositorio el plan quedó en `03-arquitectura-decisiones/spikes/TBD-8_compatibilidad/plan/`, el ADR en `03-arquitectura-decisiones/adr/ADR-0001_baseline-node-typescript-nestjs.md` y las fuentes en `03-arquitectura-decisiones/spikes/TBD-8_compatibilidad/evidence/`.
 
 **Estado: aplicado en la revisión 2 (2026-10-18).**
 

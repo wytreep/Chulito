@@ -32,7 +32,7 @@
 
 ## Task 1: Capture sources and the candidate matrix
 
-**Files:** `evidence/registry-metadata.json`, `evidence/sources.md`, `ADR-0001.md`.
+**Files:** `evidence/registry-metadata.json`, `evidence/sources.md`, `ADR-0001_baseline-node-typescript-nestjs.md`.
 
 - [x] Record retrieval timestamp and registry URL.
 - [x] Capture exact versions, `engines`, and peer dependencies for the selected Nest/TypeScript/test/Swagger/config/pg packages in `evidence/registry-metadata.json`.

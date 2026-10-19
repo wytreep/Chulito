@@ -1,3 +1,7 @@
 # _archivo
 
-Paquetes completos de entregas previas (carpeta + `.zip` + manifiesto). Los nombres se normalizaron a **Chulito**; los documentos sueltos de versiones anteriores viven junto a la versión vigente en su carpeta por tipo.
+Copia original e **inmutable** de las entregas previas al paquete v0.4. Solo se guardan los `.zip` tal como se recibieron, sin descomprimir: la carpeta extraída es un duplicado que se puede volver a extraer del `.zip`.
+
+- `Chulito_Entrega_Diseno_Tecnico_2026-10-13.zip`
+- `Chulito_Entrega_Tecnica_2026-10-17.zip`
+- `documentos-word-iniciales/`: los documentos Word iniciales del proyecto (v0.1 y v0.2), que no vienen en los `.zip`.

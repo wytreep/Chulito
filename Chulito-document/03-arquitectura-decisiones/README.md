@@ -1,5 +1,5 @@
 # 03-arquitectura-decisiones
 
-- `adr/`: decisiones de arquitectura numeradas (`ADR-0001_...md`). Cada una con estado: Propuesto, Aceptado o Reemplazado.
-- `spikes/`: informes, planes y evidencia de pruebas técnicas (ST-01 y TBD-8).
+- `adr/`: decisiones de arquitectura numeradas (`ADR-XXXX_<detalle>.md`), con estado Propuesto, Aceptado o Reemplazado. Hoy: `ADR-0001_baseline-node-typescript-nestjs.md`.
+- `spikes/`: una carpeta por spike con su informe y su evidencia (`ST-01_canales/`, `TBD-8_compatibilidad/`).
 - Pendientes: diagramas C4, modelo de datos y contrato OpenAPI.

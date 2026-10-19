@@ -4,11 +4,11 @@ Este directorio contiene el spike aislado de compatibilidad de Node.js, TypeScri
 
 ## Entregables
 
-- [ADR-0001](../adr/ADR-0001.md): decisión propuesta, trazabilidad, alternativas, consecuencias y límites.
+- [ADR-0001](../adr/ADR-0001_baseline-node-typescript-nestjs.md): decisión propuesta, trazabilidad, alternativas, consecuencias y límites.
 - [Harness NestJS](../../../Chulito-coding/ADR-0001_spike-compatibilidad/README.md): fuentes, versiones, comandos y prueba PostgreSQL opcional.
 - [Registro de verificación (revisión 2)](evidence/verification-2026-10-18-revision-2.md): salida resumida de la matriz Node 22/24 con `lint`/`format:check`, ERESOLVE de TypeScript 7 y límites observados. Reemplaza a la [revisión 1](evidence/verification-2026-10-18.md).
 - [Fuentes](evidence/sources.md) y [snapshot de metadata npm](evidence/registry-metadata.json).
-- [Plan del spike](docs/plans/2026-10-17-adr-0001-compatibility-spike.md).
+- [Plan del spike](plan/2026-10-17-adr-0001-compatibility-spike.md).
 
 ## Reproducir
 
