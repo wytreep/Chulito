@@ -1,6 +1,6 @@
 # Chulito-document
 
-Documentos del proyecto. Se numera por tipo; dentro de cada carpeta va la **versión vigente** y, junto a cada `.docx`, su `.pdf` generado desde él. Las entregas previas al paquete v0.4 se conservan como `.zip` en `_archivo/`, junto a la carpeta `versiones-anteriores/`.
+Documentos del proyecto. Se numera por tipo; dentro de cada carpeta va la **versión vigente** y, junto a cada `.docx`, su `.pdf` generado desde él. Aquí solo se versionan los archivos de texto (índices, ADR, planes, evidencia y estos READMEs); los binarios (`*.docx`, `*.pdf` y `*.zip`) se guardan **fuera del repositorio**, en `C:\dev\Chulito_documentos\`, con la misma ruta relativa. Las entregas previas al paquete v0.4 se conservan como `.zip` en `_archivo/`, junto a la carpeta `versiones-anteriores/`.
 
 | Carpeta | Contenido | Estado |
 |---|---|---|

@@ -34,3 +34,8 @@ Thumbs.db
 # Datos reales: este repositorio solo admite datos sintéticos
 /datos-reales/
 /muestras-reales/
+
+# Documentos binarios: viven fuera del repositorio, en C:\dev\Chulito_documentos\
+*.docx
+*.pdf
+*.zip
