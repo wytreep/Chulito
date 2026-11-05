@@ -7,7 +7,7 @@ Documentos del proyecto. Se numera por tipo; dentro de cada carpeta va la **vers
 | `00-control/` | Índice de versiones, trazabilidad requisito → código → prueba, lista de correcciones abiertas | Activa |
 | `01-investigacion/` | Guía de entrevistas, evidencia documental y el informe S-0.1 (escenario simulado) | Activa |
 | `02-requisitos/` | PRD, SRS e historias de usuario | PRD y SRS activos; historias v0.1 en borrador |
-| `03-arquitectura-decisiones/` | ADR, informes y evidencia de spikes (una carpeta por spike), C4, modelo de datos y API | ADR-0001 propuesto; el resto pendiente |
+| `03-arquitectura-decisiones/` | ADR, informes y evidencia de spikes (una carpeta por spike), C4, modelo de datos y API | ADR-0001 propuesto; C4 v0.1; el resto pendiente |
 | `04-sintesis/` | Síntesis documental | Activa |
 | `05-operacion/` | Entregas con manifiesto SHA256 y futuros runbooks | Activa |
 | `06-seguridad-privacidad/` | Modelo de amenazas (STRIDE), política de datos, Ley 1581 | Borradores (TBD-6 legal; STRIDE de diseño) |
