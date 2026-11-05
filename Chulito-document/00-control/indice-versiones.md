@@ -15,3 +15,5 @@
 | Modelo de amenazas (STRIDE) | 0.1 | `06-seguridad-privacidad/` | Borrador — sin revisión de seguridad externa |
 | Términos y condiciones del servicio | 0.1 | `06-seguridad-privacidad/` | Borrador — revisión legal pendiente (TBD-6) |
 | Política de cookies | 0.1 | `06-seguridad-privacidad/` | Borrador — revisión legal pendiente (TBD-6) |
+| Historias de usuario | 0.1 | `02-requisitos/historias-usuario/` | Borrador — pendiente de revisión de producto |
+| Plan de pruebas | 0.1 | `07-calidad-pruebas/` | Borrador — sin pruebas ejecutadas |
