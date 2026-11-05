@@ -1,6 +1,7 @@
 # Cambios por entrega
 
 ## Sin publicar
+- Documentos legales en **borrador v0.1** en `06-seguridad-privacidad/`: política de tratamiento de datos, aviso de privacidad y autorización de tratamiento. Texto en el repositorio y PDF en `C:\dev\Chulito_documentos\`. Sujetos a revisión legal (TBD-6); no usar con datos reales.
 - El repositorio guarda solo texto (`.md`) y código. Los binarios (`*.docx`, `*.pdf` y `*.zip`) viven **fuera** del repositorio, en `C:\dev\Chulito_documentos\`, con la misma ruta relativa; aquí quedan la estructura, los READMEs y un `.gitkeep` por carpeta. Se ignoran esos formatos en `.gitignore` para no reincorporarlos por accidente.
 - Estructura definitiva del repositorio: `Chulito-document/` por tipo y `Chulito-coding/` por documento de origen, con `.gitkeep` en las carpetas todavía vacías.
 - `spikes/` reorganizado en una carpeta por spike (`ST-01_canales/`, `TBD-8_compatibilidad/` con `README.md`, `evidence/` y `plan/`). El ADR vive en `adr/ADR-0001_baseline-node-typescript-nestjs.md` y `capture_registry_metadata.py` en `Chulito-coding/ADR-0001_spike-compatibilidad/tools/`.
