@@ -20,7 +20,7 @@ Cada carpeta de código incluye un `DERIVADO_DE.md` con el documento origen, los
 
 ## Dónde están los documentos
 
-Los binarios (`*.docx`, `*.pdf` y `*.zip`) **no** se versionan aquí: se guardan fuera del repositorio, en `C:\dev\Chulito_documentos\`, con la **misma ruta relativa** que tendrían dentro (por ejemplo `Chulito_documentos\Chulito-document\02-requisitos\prd\Chulito_PRD_v0.4_2026-10-17.pdf`). El repositorio conserva la carpeta, su README y un `.gitkeep` como marcador de posición. Los archivos de texto (`.md`: índices, ADR, planes, evidencia) sí están aquí.
+Los binarios (`*.docx`, `*.pdf` y `*.zip`) **no** se versionan aquí: se guardan fuera del repositorio, en `C:\dev\Chulito_documentos\`, con la **misma ruta relativa** que tendrían dentro (por ejemplo `Chulito_documentos\Chulito-document\02-requisitos\prd\Chulito_PRD_v0.4_2026-10-17.pdf`). El repositorio conserva la carpeta, su README y, en las carpetas todavía vacías, un `.gitkeep` como marcador de posición. Los archivos de texto (`.md`: índices, ADR, planes, evidencia) sí están aquí.
 
 ## Reglas
 
@@ -32,6 +32,8 @@ Los binarios (`*.docx`, `*.pdf` y `*.zip`) **no** se versionan aquí: se guardan
 ## Estado de la Fase 0
 
 Pendientes abiertos (detalle en el SRS v0.4): TBD-1 captura, TBD-2 emisores, TBD-6 asesoría legal, TBD-7 validación real, TBD-8 ADR-0001 (en revisión), TBD-9 port a TypeScript.
+
+Documentos legales y de seguridad: `Chulito-document/06-seguridad-privacidad/` reúne política de tratamiento de datos, aviso de privacidad, autorización, términos y condiciones, política de cookies y modelo de amenazas (STRIDE). Todos están en **borrador** y sujetos a revisión legal (TBD-6).
 
 ## Cómo verificar
 

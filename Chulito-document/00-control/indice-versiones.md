@@ -14,3 +14,4 @@
 | Autorización de tratamiento de datos | 0.1 | `06-seguridad-privacidad/` | Borrador — revisión legal pendiente (TBD-6) |
 | Modelo de amenazas (STRIDE) | 0.1 | `06-seguridad-privacidad/` | Borrador — sin revisión de seguridad externa |
 | Términos y condiciones del servicio | 0.1 | `06-seguridad-privacidad/` | Borrador — revisión legal pendiente (TBD-6) |
+| Política de cookies | 0.1 | `06-seguridad-privacidad/` | Borrador — revisión legal pendiente (TBD-6) |
