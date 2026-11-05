@@ -7,6 +7,7 @@ Borradores legales y de seguridad del proyecto. **Ninguno ha sido revisado por u
 | Política de tratamiento de datos personales | 0.1 | Borrador | `politica-tratamiento-datos.md` |
 | Aviso de privacidad | 0.1 | Borrador | `aviso-privacidad.md` |
 | Autorización para el tratamiento de datos | 0.1 | Borrador | `autorizacion-tratamiento-datos.md` |
+| Modelo de amenazas (STRIDE) | 0.1 | Borrador | `modelo-amenazas-stride.md` |
 
 Los PDF están **fuera del repositorio**, en `C:\dev\Chulito_documentos\Chulito-document\06-seguridad-privacidad\`, con el mismo nombre que su `.md`.
 
@@ -24,7 +25,7 @@ Los PDF están **fuera del repositorio**, en `C:\dev\Chulito_documentos\Chulito-
 
 ## Pendiente
 
-- Modelo de amenazas (STRIDE).
+- Repetir el modelo STRIDE sobre la arquitectura real del backend (TBD-9) y trazar cada mitigación a un requisito del SRS.
 - Revisión de la Ley 1581 de 2012 por un abogado (TBD-6).
 - Términos y condiciones del servicio (sin redactar).
 - Política de cookies, si el producto web las usa.
