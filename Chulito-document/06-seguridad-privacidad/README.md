@@ -7,6 +7,7 @@ Borradores legales y de seguridad del proyecto. **Ninguno ha sido revisado por u
 | Política de tratamiento de datos personales | 0.1 | Borrador | `politica-tratamiento-datos.md` |
 | Aviso de privacidad | 0.1 | Borrador | `aviso-privacidad.md` |
 | Autorización para el tratamiento de datos | 0.1 | Borrador | `autorizacion-tratamiento-datos.md` |
+| Términos y condiciones del servicio | 0.1 | Borrador | `terminos-y-condiciones.md` |
 | Modelo de amenazas (STRIDE) | 0.1 | Borrador | `modelo-amenazas-stride.md` |
 
 Los PDF están **fuera del repositorio**, en `C:\dev\Chulito_documentos\Chulito-document\06-seguridad-privacidad\`, con el mismo nombre que su `.md`.
@@ -19,7 +20,8 @@ Los PDF están **fuera del repositorio**, en `C:\dev\Chulito_documentos\Chulito-
    - los plazos de conservación definitivos;
    - la calificación de Chulito como responsable o encargado frente a los datos de los pagadores;
    - los proveedores y el país de alojamiento (transferencia internacional).
-3. Aprobar el texto y registrar la versión.
+3. Definir para los términos y condiciones: precio, plan, período de aviso de cambios, canal y horario de soporte, tope de responsabilidad y mecanismo de solución de controversias.
+4. Aprobar el texto y registrar la versión.
 
 **Ningún documento de esta carpeta sustituye una revisión jurídica.**
 
@@ -27,5 +29,5 @@ Los PDF están **fuera del repositorio**, en `C:\dev\Chulito_documentos\Chulito-
 
 - Repetir el modelo STRIDE sobre la arquitectura real del backend (TBD-9) y trazar cada mitigación a un requisito del SRS.
 - Revisión de la Ley 1581 de 2012 por un abogado (TBD-6).
-- Términos y condiciones del servicio (sin redactar).
+- Términos y condiciones del servicio: revisión legal y definición de precio, plan y responsabilidad.
 - Política de cookies, si el producto web las usa.
